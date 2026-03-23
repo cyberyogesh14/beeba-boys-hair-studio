@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Beeba Boys Hair Studio · unisex salon Australia</title>
+  <!-- Font Awesome 5 (free) for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!-- Google Fonts: modern, friendly sans-serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    /* MOBILE-FIRST RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fcf9f7;
+      color: #2a2a2a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;  /* slightly reduced for very small screens */
+    }
+
+    /* header – stacked for mobile, but keep clean */
+    header {
+      background-color: #1e2b2c;
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .header-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .logo i {
+      font-size: 2.2rem;
+      color: #e9c46a;
+    }
+
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: white;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .logo span {
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: #e9c46a;
+      display: block;
+      text-align: center;
+    }
+
+    /* nav links – scrollable if needed, but wrap fine */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px 24px;
+      margin: 5px 0 0;
+    }
+
+    .nav-links a {
+      color: #f0eae4;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.2s;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover {
+      color: #e9c46a;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(115deg, #e6ddd5 0%, #d6ccc2 100%);
+      padding: 40px 0;
+    }
+
+    .hero-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .hero-text {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-text .badge {
+      background-color: #1e2b2c;
+      color: #e9c46a;
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      word-break: keep-all;
+    }
+
+    .hero-text h2 {
+      font-size: 2.5rem;  /* balanced for mobile */
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1e2b2c;
+      margin-bottom: 16px;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #3a3a3a;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+      text-align: center;
+      width: auto;
+      min-width: 200px;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background-color: #1e2b2c;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #2f4142;
+      transform: scale(1.02);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid #1e2b2c;
+      color: #1e2b2c;
+    }
+
+    .btn-outline:hover {
+      background-color: #1e2b2c;
+      color: white;
+    }
+
+    .hero-image {
+      width: 100%;
+      background-color: #b9afa3;
+      border-radius: 32px;
+      padding: 30px 15px;
+      text-align: center;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+
+    .hero-image i {
+      font-size: 6rem;
+      color: #1e2b2c;
+      opacity: 0.8;
+    }
+
+    .hero-image p {
+      font-weight: 600;
+      color: #1e2b2c;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    /* sections general */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1e2b2c;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .section-sub {
+      color: #5f5b57;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.1rem;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    /* services grid – 1 column on smallest, 2 on wider */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 460px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 16px;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      transition: transform 0.2s;
+      text-align: center;
+      border: 1px solid #f0e2d4;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      background-color: #e9c46a20;
+      width: 70px;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+    }
+
+    .service-icon i {
+      font-size: 2rem;
+      color: #1e2b2c;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1e2b2c;
+    }
+
+    .price {
+      margin-top: 16px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #1e2b2c;
+      background: #f5ede6;
+      display: inline-block;
+      padding: 5px 20px;
+      border-radius: 60px;
+    }
+
+    /* team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 500px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .team-member {
+      background: white;
+      border-radius: 32px;
+      padding: 30px 16px 25px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.02);
+      border: 1px solid #f0e2d4;
+    }
+
+    .member-img {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 16px;
+      background: #d4c9be;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .member-img i {
+      font-size: 3.8rem;
+      color: #1e2b2c;
+      opacity: 0.7;
+    }
+
+    .team-member h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1e2b2c;
+    }
+
+    .team-member .role {
+      color: #b48b5a;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* location wrap */
+    .location-wrap {
+      background: #e6ddd5;
+      border-radius: 40px;
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .map-placeholder {
+      background: #beb3a6;
+      border-radius: 32px;
+      padding: 30px 15px;
+      text-align: center;
+      color: #1e2b2c;
+    }
+
+    .map-placeholder i {
+      font-size: 3.5rem;
+      color: #1e2b2c;
+      margin-bottom: 15px;
+    }
+
+    .address-details {
+      text-align: center;
+    }
+
+    .address-details h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e2b2c;
+      line-height: 1.2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+      word-break: break-word;
+    }
+
+    .contact-item i {
+      font-size: 1.5rem;
+      color: #1e2b2c;
+      min-width: 30px;
+    }
+
+    /* booking section */
+    #book .container {
+      text-align: center;
+    }
+
+    /* footer */
+    footer {
+      background: #1e2b2c;
+      color: #ddd6cf;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-social {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .footer-social a {
+      color: #e9c46a;
+      font-size: 1.8rem;
+      transition: color 0.2s;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #3f5355;
+      margin: 30px 0 20px;
+    }
+
+    /* make all images/containers responsive */
+    img, svg, i {
+      max-width: 100%;
+    }
+
+    /* improve tap targets */
+    .nav-links a, .btn, .footer-social a {
+      touch-action: manipulation;
+    }
+
+    /* tablet and up adjustments */
+    @media (min-width: 700px) {
+      .header-flex {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .logo {
+        justify-content: flex-start;
+        width: auto;
+      }
+      .nav-links {
+        flex-wrap: nowrap;
+      }
+      .hero-flex {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+      .hero-text {
+        text-align: left;
+      }
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+      .hero-text h2 {
+        font-size: 3rem;
+      }
+      .location-wrap {
+        flex-direction: row;
+        text-align: left;
+      }
+      .address-details {
+        text-align: left;
+      }
+      .contact-item {
+        justify-content: flex-start;
+      }
+      .section-title {
+        text-align: left;
+      }
+      .section-sub {
+        text-align: left;
+        margin-left: 0;
+      }
+    }
+
+    /* large screens keep original */
+    @media (min-width: 1000px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* small phones (under 400) */
+    @media (max-width: 380px) {
+      .hero-text h2 {
+        font-size: 2rem;
+      }
+      .btn {
+        min-width: 160px;
+        padding: 12px 16px;
+      }
+      .logo h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">
+        <i class="fas fa-cut"></i>
+        <div>
+          <h1>beeba boys <span>hair studio</span></h1>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#location">Location</a>
+        <a href="./book.html">Book</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / unisex & australia explicit -->
+    <section class="hero">
+      <div class="container hero-flex">
+        <div class="hero-text">
+          <span class="badge"><i class="fas fa-map-pin" style="margin-right: 4px;"></i> Australia · unisex studio</span>
+          <h2>where every <br>style finds home.</h2>
+          <p>Beeba Boys Hair Studio – modern unisex salon in the heart of Australia. Fresh cuts, bold colour, timeless grooming.</p>
+          <div class="hero-buttons">
+            <a href="./book.html" class="btn btn-primary"><i class="fas fa-calendar-check" style="margin-right: 6px;"></i>Book now</a>
+            <a href="#services" class="btn btn-outline">Explore services</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <i class="fas fa-user-astronaut"></i>
+          <p>✂️ precision for everyone</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES section -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">services · crafted for all</h2>
+        <div class="section-sub">From classic fades to textured layers – we speak hair, all genders, all vibes.</div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-cut"></i></div>
+            <h3>precision cuts</h3>
+            <p>Scissor work, fades, clipper finishes – tailored to your face shape.</p>
+            <div class="price">$45+</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-tint"></i></div>
+            <h3>colour & tone</h3>
+            <p>Balayage, global colour, root touch‑ups. Ammonia‑free options.</p>
+            <div class="price">$75+</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-hand-sparkles"></i></div>
+            <h3>grooming</h3>
+            <p>Beard sculpting, hot towel shaves, brow shaping – unisex finesse.</p>
+            <div class="price">$35+</div>
+          </div>
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-child"></i></div>
+            <h3>kids & teens</h3>
+            <p>First cuts, cool styles for little ones. calm & patient.</p>
+            <div class="price">$30+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM section - unisex stylists -->
+    <section id="team" style="background-color: #f7f1eb;">
+      <div class="container">
+        <h2 class="section-title">meet the beeba crew</h2>
+        <div class="section-sub">artists who love hair, regardless of gender.</div>
+        <div class="team-grid">
+          <div class="team-member">
+            <div class="member-img"><i class="fas fa-user-circle"></i></div>
+            <h4>Jatin</h4>
+            <div class="role">master stylist / co-owner</div>
+            <p>10+ years editorial. expert in androgynous cuts and lived‑in colour.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-img"><i class="fas fa-user-circle"></i></div>
+            <h4>Jordan Lee</h4>
+            <div class="role">barber & colour specialist</div>
+            <p>Precision fades meet pastel pinks. loves transforming textures.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-img"><i class="fas fa-user-circle"></i></div>
+            <h4>Samir Kaur</h4>
+            <div class="role">senior groomer</div>
+            <p>Beard wizard + curly hair advocate. makes everyone feel seen.</p>
+          </div>
+          <div class="team-member">
+            <div class="member-img"><i class="fas fa-user-circle"></i></div>
+            <h4>Casey Rowe</h4>
+            <div class="role">stylist / first chair</div>
+            <p>Modern mullets, skin fades, and bold fashion colours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION + CONTACT (AUSTRALIA) -->
+    <section id="location">
+      <div class="container location-wrap">
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt"></i>
+          <p><strong>Beeba Boys Hair Studio</strong><br>📍 42 George Street, Sydney NSW 2000<br> 
+          <i class="fas fa-phone-alt" style="font-size:1.2rem; margin-top:10px;"></i> 02 9876 5432</p>
+          <p style="margin-top: 20px;"><i class="fas fa-clock"></i>  tue–sat 9am–6pm, sun 10am–4pm</p>
+        </div>
+        <div class="address-details">
+          <h3>australia <br>based & loved</h3>
+          <p>right in the heart of Sydney – easy street parking, 5 min from Town Hall station. Wheelchair accessible.</p>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i> <span>hello@beebaboys.com.au</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i> <span>02 9876 5432</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-instagram"></i> <span>@beebaboys_hairstudio</span>
+          </div>
+          <a href="./book.html" class="btn btn-primary" style="margin-top: 20px;">online booking</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING / call to action -->
+    <section id="book" style="background: #ffffff; padding: 60px 0;">
+      <div class="container">
+        <i class="fas fa-calendar-alt" style="font-size: 3.5rem; color: #e9c46a; margin-bottom: 20px;"></i>
+        <h2 class="section-title" style="margin-bottom: 10px;">ready to sit in our chair?</h2>
+        <p class="section-sub" style="margin-left: auto; margin-right: auto;">Book your appointment online – instant confirmation, easy reschedule.</p>
+        <a href="#" class="btn btn-primary" style="font-size: 1.2rem; padding: 16px 32px;"><i class="fas fa-calendar-check"></i> book online</a>
+        <p style="margin-top: 30px; color: #7b6e64;">or call us: <strong>02 9876 5432</strong> — walk‑ins welcome too!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logo" style="justify-content: center; margin-bottom: 10;">
+        <i class="fas fa-cut" style="color:#e9c46a;"></i>
+        <h1 style="color: white; font-size: 1.8rem;">beeba boys <span style="color:#e9c46a;">Hair studio</span></h1>
+      </div>
+      <p style="font-size: 1.1rem;">unisex · sydney · australia</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=61580944072888&ref=NONE_xav_ig_profile_page_web#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com/beebaboys_hairstudio" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <hr>
+      <p style="font-size: 0.9rem;">© 2025 Beeba Boys Hair Studio – all styles, all genders, all welcome.</p>
+    </div>
+  </footer>
+
+  <!-- smooth scroll for anchor links -->
+  <script>
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
